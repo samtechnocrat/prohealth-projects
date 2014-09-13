@@ -31,7 +31,33 @@
 	<script src="assets/flowplayer/flowplayer-3.2.13.min.js"></script>
 	
 </head>
+<script type="text/javascript">
 
+	    <!-- Place this asynchronous JavaScript just before your </body> tag -->
+      (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client:plusone.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
+	
+     function signinCallback(authResult) {
+         if (authResult['status']['signed_in']) {
+             // Update the app to reflect a signed in user
+             // Hide the sign-in button now that the user is authorized, for example:
+             document.getElementById('signinButton').setAttribute('style', 'display: none');
+             document.getElementById('signout').setAttribute('style', 'display: inline');
+            // alert("User Signed In"); 
+         } else {
+             // Update the app to reflect a signed out user
+             // Possible error values:
+             //   "user_signed_out" - User is signed-out
+             //   "access_denied" - User denied access to your app
+             //   "immediate_failed" - Could not automatically log in the user
+             console.log('Sign-in state: ' + authResult['error']);
+             document.getElementById('signout').setAttribute('style', 'display: none');
+         }
+     }
+</script>
 <body>
 	<!-- Fixed navbar -->
 	<div class="navbar navbar-inverse">
@@ -61,6 +87,9 @@
 						</ul>
 					</li>
 					<li><a href="contact.html">Contact</a></li>
+<span id="signout" style="display:none" >
+					<li><a href="" onclick=gapi.auth.signOut();
+>Sign Out</a></li> </span>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -73,10 +102,24 @@
 			<div class="row">
 				<div class="col-sm-8">
 					<h1>Live Classroom</h1>
+		    <br/><br/>
+                    <li>
+			<span id="signinButton">
+  			<span
+    			class="g-signin"
+   		 	data-callback="signinCallback"
+   	 		data-clientid="666271820576-cc4d2o2vhbh6t261t560k4kuuokq4l2m.apps.googleusercontent.com"
+    			data-cookiepolicy="single_host_origin"
+    			data-requestvisibleactions="http://schema.org/AddAction"
+    			data-scope="https://www.googleapis.com/auth/plus.login">
+  			</span>
+			</span>
+                    </li>
 				</div>
 			</div>
 		</div>
 	</header>
+        <br/><br/>
 	<!-- container -->
 	<div class="container">
 		<div class="row">
