@@ -29,33 +29,6 @@
 	-->
 	
 	<script src="assets/flowplayer/flowplayer-3.2.13.min.js"></script>
-	<script type="text/javascript">
-
-	    <!-- Place this asynchronous JavaScript just before your </body> tag -->
-      (function() {
-       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-       po.src = 'https://apis.google.com/js/client:plusone.js';
-       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-     })();
-	
-     function signinCallback(authResult) {
-         if (authResult['status']['signed_in']) {
-             // Update the app to reflect a signed in user
-             // Hide the sign-in button now that the user is authorized, for example:
-             document.getElementById('signinButton').setAttribute('style', 'display: none');
-             document.getElementById('signout').setAttribute('style', 'display: inline');
-            // alert("User Signed In"); 
-         } else {
-             // Update the app to reflect a signed out user
-             // Possible error values:
-             //   "user_signed_out" - User is signed-out
-             //   "access_denied" - User denied access to your app
-             //   "immediate_failed" - Could not automatically log in the user
-             console.log('Sign-in state: ' + authResult['error']);
-             document.getElementById('signout').setAttribute('style', 'display: none');
-         }
-     }
-</script>
 <script type="javascript">
 $(document).ready(function(){ // on document ready
    if( document.getElementById('signout').style.display == 'none') {
@@ -254,6 +227,33 @@ $(document).ready(function(){ // on document ready
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<script src="assets/js/custom.js"></script>
+		<script type="text/javascript">
+
+	    <!-- Place this asynchronous JavaScript just before your </body> tag -->
+      (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client:plusone.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
+	
+     function signinCallback(authResult) {
+         if (authResult['status']['signed_in']) {
+             // Update the app to reflect a signed in user
+             // Hide the sign-in button now that the user is authorized, for example:
+             document.getElementById('signinButton').setAttribute('style', 'display: none');
+             document.getElementById('signout').setAttribute('style', 'display: inline');
+            // alert("User Signed In"); 
+         } else {
+             // Update the app to reflect a signed out user
+             // Possible error values:
+             //   "user_signed_out" - User is signed-out
+             //   "access_denied" - User denied access to your app
+             //   "immediate_failed" - Could not automatically log in the user
+             console.log('Sign-in state: ' + authResult['error']);
+             document.getElementById('signout').setAttribute('style', 'display: none');
+         }
+     }
+</script>
 <script>
 flowplayer("player", "http://releases.flowplayer.org/swf/flowplayer-3.2.7.swf", {
     clip: {  
