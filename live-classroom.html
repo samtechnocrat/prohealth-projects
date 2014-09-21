@@ -57,6 +57,7 @@
 
 	.fl{float: left;}
 	.fr{float:right;}
+	a{cursor:pointer !important; }
 	</style>
 </head>
 
@@ -89,7 +90,7 @@
 						</ul>
 					</li>
 					<li><a href="contact.html">Contact</a></li>
-					<li id="signout" style="display:none;"><a href="" onclick="gapi.auth.signOut();" style="color:#0b9ff3;text-decoration:underline; font-weight:400;">Sign Out</a></li> 
+					<li id="signout" style="display:none; z-index:1000;"><a href="" onclick="gapi.auth.signOut();" style="color:#0b9ff3;text-decoration:underline; font-weight:400;">Sign Out</a></li> 
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -118,18 +119,25 @@
 				  <!-- test<span id="signinButton" style="line-height: 11px;vertical-align:middle; display: inline-block;" value="Test" type="submit" />Test</span>-->
 					 
 					<!-- Google+ Sign in button code-->
-					<span id="signinButton" style="line-height: 11px;vertical-align:middle; display:inline-block;"> 
-					<span class="g-signin" data-callback="signinCallback" data-clientid="666271820576-cc4d2o2vhbh6t261t560k4kuuokq4l2m.apps.googleusercontent.com"
-						data-cookiepolicy="single_host_origin" data-requestvisibleactions="http://schema.org/AddAction" data-scope="https://www.googleapis.com/auth/plus.login">
+					<span id="signinButton" style="z-index:1000; line-height: 11px;vertical-align:middle; display:inline-block;"> 
+					<span 
+					  class="g-signin" 
+					  data-callback="signinCallback" 
+					  data-clientid="666271820576-cc4d2o2vhbh6t261t560k4kuuokq4l2m.apps.googleusercontent.com"
+					  data-cookiepolicy="single_host_origin" 
+					  data-requestvisibleactions="http://schema.org/AddAction" 
+					  data-scope="https://www.googleapis.com/auth/plus.login">
 					</span> 
 			        </span>
 			  </div>
 			  
-			  <div style="text-align:center; margin:15px auto; /*display:none;*/" id="qframe"><input type="submit" name="Start Test" value="Start the Test Now" onclick="loadframe('viewme');" class="start">
+			  <div style="text-align:center; margin:15px auto; display:none; z-index:1000;" id="qframe"><input type="submit" name="Start Test" value="Start the Test Now" onclick="loadframe('viewme');" class="start">
 			  </div>
+			  <div id="loading" style="text-align:center; margin:15px auto; display:none; font-size:20px;">Loading... Please wait.</div>
 			  
 			  <div style="margin:10px auto; text-align:center;" id="viewme">
-			  <iframe id="myFrame" width="100%" height="0px;" style="border:0px;" data-src="http://research.zarca.com/k/VsSWPQsURsPsPsP" src="about:blank;"></iframe>
+			  <iframe id="myFrame" width="100%" style="border: 0; z-index:9999; position:absolute; top:0; left:0; right:0; bottom:0; width:100%;" style="border:0px;" data-src="http://research.zarca.com/k/VsSWPQsUSsPsPsP" src="about:blank;"></iframe>
+			 
 			  </div>
 		  </div> 
 		  <!-- Feedback Survey
@@ -138,9 +146,7 @@
 		  <script type='text/javascript' src="http://research.zarca.com/AllImages11/Website-Feedback/feedback.js" ></script> <script type='text/javascript' >document.getElementById('feedback_div').style.display='';</script> 
 		  </div>
 		  -->
-		
-		
-			<!-- Article content -->
+			<!-- Article content 
 			<section class="col-sm-12 maincontent">
 				<h3>What you will learn at Live classroom?</h3>
 				<p>
@@ -148,104 +154,10 @@
 				</p>
 				<h3>Live Classroom features</h3>
 				<p>Standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-			</section>
+			</section>-->
 		</div>
 	</div>
 	<!-- /container -->
-
-	<section id="services">
-		<div class="container">
-			<div class="heading">
-				<!-- Heading -->
-				<h2>What we do</h2>
-				<p>At lorem Ipsum available, but the majority have suffered alteration iien, non gravida purus. Alinon elit imperdiet congue. Integer ultricies sed elit imperdiet congue. Integer ultricieien, non gravida purus. Alinon elit imperdiet congue. Integer ultricies sed elit imperdiet congue. Integer ultricien some form by injected humour.</p>
-				<br />
-			</div>
-			<div class="row">
-
-				<!-- item -->
-				<div class="col-md-4 text-center">
-					<i class="fa fa-arrows fa-2x circle"></i>
-					<h3><span class="id-color">Feature 1</span></h3>
-					<p>Nullam ac rhoncus sapien, non gravida purus. Alinon elit imperdiet congue. Integer elit imperdiet congue.</p>
-				</div>
-				<!-- end: -->
-
-				<!-- item -->
-				<div class="col-md-4 text-center">
-					<i class="fa fa-css3 fa-2x circle"></i>
-					<h3><span class="id-color">Feature 2</span></h3>
-					<p>Nullam ac rhoncus sapien, non gravida purus. Alinon elit imperdiet congue. Integer elit imperdiet congue.</p>
-				</div>
-				<!-- end: -->
-
-				<!-- item -->
-				<div class="col-md-4 text-center">
-					<i class="fa fa-lightbulb-o fa-2x circle"></i>
-					<h3><span class="id-color">Feature 3</span></h3>
-					<p>Nullam ac rhoncus sapien, non gravida purus. Alinon elit imperdiet congue. Integer ultricies sed elit impe.</p>
-				</div>
-				<!-- end: -->
-
-				
-
-			</div>
-		</div>
-		<!--/.container-->
-	</section>
-    
-	<section id="livestream" style="margin:20px auto; width: 660px; display:none;" >
-	 <div id="myElement">
-	 </div>
-	</section>
-	
-	<div id="player" style="border:1px solid #eee; width:800px; height:600px;margin:20px auto;"></div>
-	
-	<footer id="footer">
-		<div class="container">
-			<div class="social text-center">
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-linkedin"></i></a>
-				<a href="#"><i class="fa fa-google-plus"></i></a>
-			</div>
-
-			<div class="clear"></div>
-			<!--CLEAR FLOATS-->
-		</div>
-		<div class="footer2">
-			<div class="container">
-				<div class="row">
-
-					<div class="col-md-6 panel">
-						<div class="panel-body">
-							<p class="simplenav">
-								<a href="index.html">Home</a> | 
-								<a href="about.html">About</a> |
-								<a href="online-courses.html">Courses</a> |
-								<a href="educational-kit.html">Educational Kit</a> |
-								<a href="live-classroom.html">Live Classroom</a> |
-								<a href="fees.html">Fees</a> |
-								<a href="portfolio.html">Our Teachings</a> |
-								<a href="contact.html">Contact</a>
-							</p>
-						</div>
-					</div>
-
-					<div class="col-md-6 panel">
-						<div class="panel-body">
-							<p class="text-right">
-								Copyright &copy; 2014. Template by <a href="http://UXIntel.com/" rel="develop">UXIntel.com</a>
-							</p>
-						</div>
-					</div>
-
-				</div>
-				<!-- /row of panels -->
-			</div>
-		</div>
-	</footer>
-
 
 
 
@@ -267,9 +179,9 @@
          if (authResult['status']['signed_in']) {
              // Update the app to reflect a signed in user
              // Hide the sign-in button now that the user is authorized, for example:
-             $("signinframe").hide();
-             $("signout").show();
-			 $("#qframe").show();
+			 document.getElementById('signinframe').setAttribute('style', 'display: none');
+			 document.getElementById('signout').setAttribute('style', 'display: inline-block');
+			 document.getElementById('qframe').setAttribute('style', 'display:block');
             // alert("User Signed In"); 
          } else {
              // Update the app to reflect a signed out user
@@ -278,9 +190,10 @@
              //   "access_denied" - User denied access to your app
              //   "immediate_failed" - Could not automatically log in the user
              console.log('Sign-in state: ' + authResult['error']);
-             $("signinframe").show();
-			 $("signout").hide();
-			 $("#qframe").hide();
+            // $("#signinframe").show();
+			//$("#signout").hide();
+			document.getElementById('qframe').setAttribute('style', 'none');
+			document.getElementById('loading').setAttribute('style', 'none');
          }
      }
 	 
@@ -296,14 +209,45 @@
 	//script.src= 'http://research.zarca.com/zdm/embed.aspx?val=QsQsQVVVsQPRTsYVP&key=VsSWPQsURsPsPsP';
 	//$("#viewme").append(script); 
 
-	 
+
+ // function toggleFullScreen(elem) {
+ //   if ((document.fullScreenElement && document.fullScreenElement !== null) || (document.msfullscreenElement && document.msfullscreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+ //       if (elem.requestFullScreen) {
+ //           elem.requestFullScreen();
+ //       } else if (elem.mozRequestFullScreen) {
+ //           elem.mozRequestFullScreen();
+ //       } else if (elem.webkitRequestFullScreen) {
+ //           elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+ //       } else if (elem.msRequestFullscreen) {
+ //           elem.msRequestFullscreen();
+ //       }
+ //   } else {
+ //       if (document.cancelFullScreen) {
+ //           document.cancelFullScreen();
+ //       } else if (document.mozCancelFullScreen) {
+ //           document.mozCancelFullScreen();
+ //       } else if (document.webkitCancelFullScreen) {
+ //           document.webkitCancelFullScreen();
+ //       } else if (document.msExitFullscreen) {
+ //           document.msExitFullscreen();
+ //       }
+ //   }
+// }
+
+	
  function loadframe(e){   
-		   // alert("0");
+		   
+		    var iframe = $("#myFrame");
 			$("#qframe").hide();
-			var iframe = $("#myFrame");
-			iframe.attr("height","960");
+			$("#loading").show();
+			//toggleFullScreen(document.body);
+			
+			iframe.attr("height","100%");
             iframe.attr("src", iframe.data("src")); 
+			
     }
+
+
 </script>
 <!--
 <script>
